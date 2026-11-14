@@ -22,17 +22,16 @@ public class HTTPHandler {
 	public static String changes = "";
 
 	public static void loadStats() {
+		loadOF();
 
 		try {
-			loadVersion();
-			loadOF();
-			loadSoyuz();
 
+			loadSoyuz();
 		} catch (IOException e) {
-			MainRegistry.logger.warn("Version checker failed!");
+			MainRegistry.logger.warn("Soyuz hologram fetch failed!");
 		}
 	}
-	
+
 	@Untested
 	private static void loadOF(){
 		//Drillgon200: Yeah this is retarded but apparently optifine isn't added to the list of forge mods
